@@ -2,6 +2,8 @@
 " -------------------------------
 set nocompatible                " No backwards compatibility
 set number                      " Line numbers
+set relativenumber              " Relative Line Numbers
+set scrolloff=10                " Show 10 lines past EOF
 set ruler                       " Show line and column numbers
 set hidden                      " Hide buffers instead of quitting
 set nowrap                      " Don't wrap lines
@@ -39,11 +41,14 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mileszs/ack.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-jedi'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Use deoplete.
@@ -68,14 +73,14 @@ let g:airline_symbols.linenr = ''
 " Mappings
 " -------------------------------
 
-" FZF FuzzyFinder
-nnoremap <C-p> :FZF<CR>
-
 " Shortcut ; to :
 map ; :
 
+" jj to esc (Prepare for 2016+ MBP? Thanks Apple)
+imap jj <Esc>
+
 " Clear search buffer
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> ,h :nohlsearch<CR>
 
 " Windowpanes
 set splitbelow
@@ -88,15 +93,18 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" jj to esc (Prepare for 2016+ MBP? Thanks Apple)
-imap jj <Esc>
+" Copy and Paste from Clipboard
+map <leader>p "+p
+map <leader>y "+y
 
 "NERDtree
 nnoremap <Leader>nt :NERDTreeToggle<cr>
 
-" Copy and Paste from Clipboard
-map <leader>p "+p
-map <leader>y "+y
+" FZF FuzzyFinder
+nnoremap <C-p> :FZF<CR>
+
+" Emmet
+let g:user_emmet_leader_key = '<c-e>'
 
 " Ack
 nmap <leader>fa :Ack<space>
