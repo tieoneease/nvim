@@ -50,7 +50,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'mattn/emmet-vim'
 call plug#end()
 
-" Use deoplete.
+" Deoplete.
 let g:deoplete#enable_at_startup = 1
 
 " Colorscheme
@@ -96,7 +96,7 @@ nnoremap <C-l> <C-w>l
 map <leader>p "+p
 map <leader>y "+y
 
-"NERDtree
+" NERDtree
 nnoremap <Leader>nt :NERDTreeToggle<cr>
 
 " FZF FuzzyFinder
