@@ -2,7 +2,6 @@
 " -------------------------------
 set nocompatible                " No backwards compatibility
 set number                      " Line numbers
-set relativenumber              " Relative Line Numbers
 set scrolloff=10                " Show 10 lines past EOF
 set ruler                       " Show line and column numbers
 set hidden                      " Hide buffers instead of quitting
