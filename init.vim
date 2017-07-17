@@ -7,11 +7,12 @@ set ruler                       " Show line and column numbers
 set hidden                      " Hide buffers instead of quitting
 set nowrap                      " Don't wrap lines
 set expandtab                   " Tab produces spaces
-set tabstop=2                   " 4 spaces per tab
-set softtabstop=2               " 4 spaces per softtab
-set shiftwidth=2                " 4 spaces for reindent
+set tabstop=2                   " 2 spaces per tab
+set softtabstop=2               " 2 spaces per softtab
+set shiftwidth=2                " 2 spaces for reindent
 set backspace=indent,eol,start  " Backspace over anything
 set autoindent                  " Autoindent
+set smartindent                 " Smart indent
 set copyindent                  " Copy previous indentation on autoindent
 set showmatch                   " Show matching parentheses
 set ignorecase                  " Ignore case when searching
@@ -27,6 +28,8 @@ set wildignore=*.pyc,*.class    " Ignore filetypes
 set encoding=utf-8              " UTF-8 Encoding
 set cursorline                  " Highlight current line
 set laststatus=2                " Always show the statusline
+set lazyredraw                  " Lazy redraw for speed
+set ttyfast                     " TTY for speed
 let mapleader = ","             " Remap leader to ,
 syntax enable                   " Enable syntax highlighting
 filetype plugin indent on       " Syntax rules for filetype
@@ -48,13 +51,19 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
 Plug 'mattn/emmet-vim'
+Plug 'chriskempson/base16-vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " Deoplete.
 let g:deoplete#enable_at_startup = 1
 
 " Colorscheme
-colorscheme dracula                   " Set Colorscheme
+set t_Co=256 " 256 color mode
+set background=dark
+let base16colorspace=256
+colorscheme base16-ocean
+let g:airline_theme='base16_ocean'
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -69,6 +78,19 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+" Deoplete
+function! s:neosnippet_complete()
+  if pumvisible()
+    return "\<c-n>"
+  else
+    if neosnippet#expandable_or_jumpable() 
+      return "\<Plug>(neosnippet_expand_or_jump)"
+    endif
+    return "\<tab>"
+  endif
+endfunction
+imap <expr><TAB> <SID>neosnippet_complete()
+
 " Mappings
 " -------------------------------
 
@@ -78,8 +100,9 @@ map ; :
 " jj to esc (Prepare for 2016+ MBP? Thanks Apple)
 imap jj <Esc>
 
-" Clear search buffer
-nmap <silent> ,h :nohlsearch<CR>
+" Search
+nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>h :set hlsearch!<CR>
 
 " Windowpanes
 set splitbelow
