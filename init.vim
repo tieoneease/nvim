@@ -37,6 +37,7 @@ filetype plugin indent on       " Syntax rules for filetype
 " Plugins
 " -------------------------------
 call plug#begin('~/.config/nvim/plugged')
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -63,22 +64,21 @@ let g:deoplete#enable_at_startup = 1
 set t_Co=256 " 256 color mode
 set background=dark
 let base16colorspace=256
-"colorscheme base16-ocean
 colorscheme base16-default-dark
 let g:airline_theme='base16'
 
 " Airline
 let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '␤'
+"if !exists('g:airline_symbols')
+  "let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.whitespace = 'Ξ'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_left_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = '␤'
 
 " Deoplete
 function! s:neosnippet_complete()
