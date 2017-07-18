@@ -50,6 +50,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
@@ -62,8 +63,9 @@ let g:deoplete#enable_at_startup = 1
 set t_Co=256 " 256 color mode
 set background=dark
 let base16colorspace=256
-colorscheme base16-ocean
-let g:airline_theme='base16_ocean'
+"colorscheme base16-ocean
+colorscheme base16-default-dark
+let g:airline_theme='base16'
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -76,7 +78,7 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = '␤'
 
 " Deoplete
 function! s:neosnippet_complete()
