@@ -47,7 +47,6 @@ Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
@@ -69,6 +68,7 @@ let g:airline_theme='base16'
 
 " Airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
 "if !exists('g:airline_symbols')
   "let g:airline_symbols = {}
 "endif
