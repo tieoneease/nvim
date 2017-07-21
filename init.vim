@@ -58,6 +58,17 @@ call plug#end()
 
 " Deoplete.
 let g:deoplete#enable_at_startup = 1
+function! s:neosnippet_complete()
+  if pumvisible()
+    return "\<c-n>"
+  else
+    if neosnippet#expandable_or_jumpable() 
+      return "\<Plug>(neosnippet_expand_or_jump)"
+    endif
+    return "\<tab>"
+  endif
+endfunction
+imap <expr><TAB> <SID>neosnippet_complete()
 
 " Colorscheme
 set t_Co=256 " 256 color mode
@@ -79,19 +90,6 @@ let g:airline#extensions#branch#enabled = 1
 "let g:airline_symbols.branch = ''
 "let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = '␤'
-
-" Deoplete
-function! s:neosnippet_complete()
-  if pumvisible()
-    return "\<c-n>"
-  else
-    if neosnippet#expandable_or_jumpable() 
-      return "\<Plug>(neosnippet_expand_or_jump)"
-    endif
-    return "\<tab>"
-  endif
-endfunction
-imap <expr><TAB> <SID>neosnippet_complete()
 
 " Mappings
 " -------------------------------
