@@ -134,3 +134,16 @@ let g:user_emmet_leader_key = '<c-e>'
 
 " Ack
 nmap <leader>fa :Ack<space>
+
+" Neoformat
+vmap <leader>nf :Neoformat<cr>
+
+" Fugitive
+nmap <leader>ga :Git add .<CR>
+nmap <leader>gc :Git commit<CR>
+nmap <leader>gr :Git rebase -i 
+nmap <leader>gp :Git push<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gl :Git log<CR>
+nmap <leader>gt :Git tree<CR>
