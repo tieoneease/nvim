@@ -54,21 +54,10 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Shougo/neocomplete'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 call plug#end()
-
-" Deoplete.
-let g:deoplete#enable_at_startup = 1
-function! s:neosnippet_complete()
-  if pumvisible()
-    return "\<c-n>"
-  else
-    if neosnippet#expandable_or_jumpable() 
-      return "\<Plug>(neosnippet_expand_or_jump)"
-    endif
-    return "\<tab>"
-  endif
-endfunction
-imap <expr><TAB> <SID>neosnippet_complete()
 
 " Colorscheme
 set t_Co=256 " 256 color mode
@@ -90,6 +79,20 @@ let g:airline#extensions#branch#enabled = 1
 "let g:airline_symbols.branch = ''
 "let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = '␤'
+
+" Deoplete.
+let g:deoplete#enable_at_startup = 1
+function! s:neosnippet_complete()
+  if pumvisible()
+    return "\<c-n>"
+  else
+    if neosnippet#expandable_or_jumpable() 
+      return "\<Plug>(neosnippet_expand_or_jump)"
+    endif
+    return "\<tab>"
+  endif
+endfunction
+imap <expr><TAB> <SID>neosnippet_complete()
 
 " Mappings
 " -------------------------------
