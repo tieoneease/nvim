@@ -33,6 +33,10 @@ set ttyfast                     " TTY for speed
 let mapleader = ","             " Remap leader to ,
 syntax enable                   " Enable syntax highlighting
 filetype plugin indent on       " Syntax rules for filetype
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+set synmaxcol=128
+syntax sync minlines=256
 
 " Plugins
 " -------------------------------
@@ -58,7 +62,26 @@ Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'sbdchd/neoformat'
+Plug 'vitalk/vim-simple-todo'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'leafgarland/typescript-vim'
+Plug 'mhartington/nvim-typescript'
+Plug 'fatih/vim-go'
+Plug 'ekalinin/Dockerfile.vim'
+"Plug 'Quramy/tsuquyomi'
+"Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 call plug#end()
+
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_debug = 1
+let g:deoplete#enable_profile = 1
+call deoplete#enable_logging('DEBUG', '/PATH_TO/deoplete.log')
 
 " Colorscheme
 set t_Co=256 " 256 color mode
