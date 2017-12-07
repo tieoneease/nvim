@@ -82,7 +82,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_debug = 1
 let g:deoplete#enable_profile = 1
-call deoplete#enable_logging('DEBUG', '/PATH_TO/deoplete.log')
+"call deoplete#enable_logging('DEBUG', '/PATH_TO/deoplete.log')
 
 " Colorscheme
 set t_Co=256 " 256 color mode
