@@ -7,9 +7,9 @@ set ruler                       " Show line and column numbers
 set hidden                      " Hide buffers instead of quitting
 set nowrap                      " Don't wrap lines
 set expandtab                   " Tab produces spaces
-set tabstop=2                   " 2 spaces per tab
-set softtabstop=2               " 2 spaces per softtab
-set shiftwidth=2                " 2 spaces for reindent
+set tabstop=4                   " 4 spaces per tab
+set softtabstop=4               " 4 spaces per softtab
+set shiftwidth=4                " 4 spaces for reindent
 set backspace=indent,eol,start  " Backspace over anything
 set autoindent                  " Autoindent
 set smartindent                 " Smart indent
@@ -69,6 +69,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mhartington/nvim-typescript'
 Plug 'fatih/vim-go'
 Plug 'ekalinin/Dockerfile.vim'
+"Plug 'pangloss/vim-javascript'
 "Plug 'Quramy/tsuquyomi'
 "Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 call plug#end()
