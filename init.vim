@@ -30,6 +30,7 @@ set cursorline                  " Highlight current line
 set laststatus=2                " Always show the statusline
 set lazyredraw                  " Lazy redraw for speed
 set ttyfast                     " TTY for speed
+set re=1                        " Old regex engine for speed?
 let mapleader = ","             " Remap leader to ,
 syntax enable                   " Enable syntax highlighting
 filetype plugin indent on       " Syntax rules for filetype
@@ -68,8 +69,13 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'leafgarland/typescript-vim'
 Plug 'mhartington/nvim-typescript'
 Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'ekalinin/Dockerfile.vim'
-"Plug 'pangloss/vim-javascript'
+Plug 'pearofducks/ansible-vim'
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'StanAngeloff/php.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install'  }
 "Plug 'Quramy/tsuquyomi'
 "Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 call plug#end()
@@ -83,6 +89,8 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_debug = 1
 let g:deoplete#enable_profile = 1
 "call deoplete#enable_logging('DEBUG', '/PATH_TO/deoplete.log')
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
 
 " Colorscheme
 set t_Co=256 " 256 color mode
