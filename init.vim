@@ -58,6 +58,7 @@ Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'sbdchd/neoformat'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 call plug#end()
 
 " Colorscheme
@@ -94,6 +95,9 @@ function! s:neosnippet_complete()
   endif
 endfunction
 imap <expr><TAB> <SID>neosnippet_complete()
+" For PHPCD
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
 
 " Mappings
 " -------------------------------
