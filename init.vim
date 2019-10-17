@@ -111,6 +111,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Tabs (mac)
+nnoremap <leader>tn :tab split<CR>
+nnoremap ∆ :tabp<CR>
+nnoremap ˚ :tabn<CR>
+nnoremap ˙ :tabmove -1<CR>
+nnoremap ¬ :tabmove +1<CR>
+
 " Copy and Paste from Clipboard
 map <leader>p "+p
 map <leader>y "+y
