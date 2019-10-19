@@ -72,6 +72,7 @@ let g:airline_theme='base16'
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Deoplete.
 let g:deoplete#enable_at_startup = 1
