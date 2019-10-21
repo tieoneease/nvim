@@ -121,8 +121,8 @@ nnoremap ˙ :tabmove -1<CR>
 nnoremap ¬ :tabmove +1<CR>
 
 " Copy and Paste from Clipboard
-map <leader>p "+p
-map <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>y "+y
 
 " NERDtree
 nnoremap <Leader>nt :NERDTreeToggle<cr>
