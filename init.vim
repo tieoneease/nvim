@@ -60,6 +60,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'sbdchd/neoformat'
 Plug 'vitalk/vim-simple-todo', { 'for': 'todo' }
 Plug 'posva/vim-vue'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 call plug#end()
 
 " Colorscheme
