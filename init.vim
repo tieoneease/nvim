@@ -47,20 +47,27 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'davidhalter/jedi-vim'
-Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neocomplete'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'sbdchd/neoformat'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': ['python', 'vue'] }
+Plug 'Shougo/neocomplete', { 'for': ['python', 'vue'] }
+Plug 'Shougo/neosnippet', { 'for': ['python', 'vue'] }
+Plug 'Shougo/neosnippet-snippets', { 'for': ['python', 'vue'] }
+Plug 'sbdchd/neoformat', { 'for': ['python', 'vue'] }
 Plug 'vitalk/vim-simple-todo', { 'for': 'todo' }
-Plug 'posva/vim-vue'
+Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'dense-analysis/ale', { 'for': 'vue' }
+" JS/Typescript
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+"Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+"Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': ['typescript', 'tsx', 'typescriptreact'] }
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['typescript', 'tsx', 'typescriptreact'] }
 call plug#end()
 
 " Colorscheme
@@ -129,15 +136,22 @@ nnoremap <Leader>nt :NERDTreeToggle<cr>
 
 " FZF FuzzyFinder
 nnoremap <C-p> :FZF<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Emmet
 let g:user_emmet_leader_key = '<c-e>'
 
 " Ack
 nmap <leader>fa :Ack<space>
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Neoformat
 vmap <leader>nf :Neoformat<cr>
+
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>fs  <Plug>(coc-format-selected)
+nmap <leader>fs  <Plug>(coc-format-selected)
 
 " Fugitive
 nmap <leader>ga :Git add .<CR>
