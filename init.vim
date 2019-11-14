@@ -81,6 +81,9 @@ let g:airline_theme='base16'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#left_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " Deoplete.
 let g:deoplete#enable_at_startup = 1
