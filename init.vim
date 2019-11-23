@@ -63,7 +63,6 @@ Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'dense-analysis/ale', { 'for': 'vue' }
 " JS/Typescript
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-"Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 "Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': ['typescript', 'tsx', 'typescriptreact'] }
@@ -165,3 +164,6 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gl :Git log<CR>
 nmap <leader>gt :Git tree<CR>
+
+" TSX
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
