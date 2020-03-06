@@ -124,10 +124,10 @@ nnoremap <C-l> <C-w>l
 
 " Tabs (mac)
 nnoremap <leader>tn :tab split<CR>
-nnoremap ∆ :tabp<CR>
-nnoremap ˚ :tabn<CR>
-nnoremap ˙ :tabmove -1<CR>
-nnoremap ¬ :tabmove +1<CR>
+nnoremap <S-j> :tabp<CR>
+nnoremap <S-k> :tabn<CR>
+nnoremap <S-h> :tabmove -1<CR>
+nnoremap <S-l> :tabmove +1<CR>
 
 " Copy and Paste from Clipboard
 nnoremap <leader>p "+p
