@@ -9,5 +9,7 @@
         "typescriptreact",
         "typescript.tsx"
     ],
-    "prettier.eslintIntegration": true
+    "prettier.eslintIntegration": true,
+    "eslint.autoFixOnSave": true,
+    "tsserver.npm": "/usr/local/bin/npm"
 }

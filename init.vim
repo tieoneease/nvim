@@ -47,27 +47,16 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': ['python', 'vue'] }
-Plug 'Shougo/neocomplete', { 'for': ['python', 'vue'] }
-Plug 'Shougo/neosnippet', { 'for': ['python', 'vue'] }
-Plug 'Shougo/neosnippet-snippets', { 'for': ['python', 'vue'] }
-Plug 'sbdchd/neoformat', { 'for': ['python', 'vue'] }
 Plug 'vitalk/vim-simple-todo', { 'for': 'todo' }
-Plug 'posva/vim-vue', { 'for': 'vue' }
-Plug 'dense-analysis/ale', { 'for': 'vue' }
-" JS/Typescript
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-"Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': ['typescript', 'tsx', 'typescriptreact'] }
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['typescript', 'tsx', 'typescriptreact'] }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+" Coc
+source $HOME/.config/nvim/coc.vim
 
 " Colorscheme
 set t_Co=256 " 256 color mode
@@ -88,20 +77,6 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
-
-" Deoplete.
-let g:deoplete#enable_at_startup = 1
-function! s:neosnippet_complete()
-  if pumvisible()
-    return "\<c-n>"
-  else
-    if neosnippet#expandable_or_jumpable() 
-      return "\<Plug>(neosnippet_expand_or_jump)"
-    endif
-    return "\<tab>"
-  endif
-endfunction
-imap <expr><TAB> <SID>neosnippet_complete()
 
 " Mappings
 " -------------------------------
@@ -127,7 +102,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Tabs (mac)
+" Tabs
 nnoremap <leader>tn :tab split<CR>
 nnoremap <S-j> :tabp<CR>
 nnoremap <S-k> :tabn<CR>
@@ -145,20 +120,12 @@ nnoremap <Leader>nt :NERDTreeToggle<cr>
 nnoremap <C-p> :FZF<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-" Emmet
-let g:user_emmet_leader_key = '<c-e>'
-
 " Ack
 nmap <leader>fa :Ack<space>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" Neoformat
-vmap <leader>nf :Neoformat<cr>
-
-" Prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>fs  <Plug>(coc-format-selected)
-nmap <leader>fs  <Plug>(coc-format-selected)
+" Emmet
+let g:user_emmet_leader_key = '<c-e>'
 
 " Fugitive
 nmap <leader>ga :Git add .<CR>
