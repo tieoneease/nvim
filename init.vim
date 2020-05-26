@@ -123,7 +123,7 @@ nnoremap <Leader>nt :NERDTreeToggle<cr>
 
 " FZF FuzzyFinder
 nnoremap <C-p> :FZF<CR>
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 " Ack
 nmap <leader>fa :Ack<space>
