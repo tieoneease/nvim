@@ -44,6 +44,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'roxma/vim-tmux-clipboard'
 Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -52,6 +53,7 @@ Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vitalk/vim-simple-todo', { 'for': 'todo' }
+Plug 'evanleck/vim-svelte'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
