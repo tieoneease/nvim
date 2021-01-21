@@ -115,6 +115,7 @@ nnoremap <S-h> :tabmove -1<CR>
 nnoremap <S-l> :tabmove +1<CR>
 
 " Copy and Paste from Clipboard
+set clipboard+=unnamedplus
 nnoremap <leader>p "+p
 nnoremap <leader>y "+y
 
