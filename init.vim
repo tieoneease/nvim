@@ -53,8 +53,7 @@ Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vitalk/vim-simple-todo', { 'for': 'todo' }
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
-Plug 'coc-extensions/coc-svelte'
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -146,3 +145,8 @@ nmap <leader>gt :Git tree<CR>
 
 " TSX
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
+" Prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+vmap <leader>=  <Plug>(coc-format-selected)
+nmap <leader>=  <Plug>(coc-format-selected)
