@@ -39,6 +39,7 @@ filetype plugin indent on       " Syntax rules for filetype
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'alvan/vim-closetag'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -48,12 +49,14 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ap/vim-css-color'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vitalk/vim-simple-todo', { 'for': 'todo' }
 Plug 'sheerun/vim-polyglot'
+Plug 'codechips/coc-svelte', {'do': 'npm install'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -148,5 +151,15 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 " Prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-vmap <leader>=  <Plug>(coc-format-selected)
-nmap <leader>=  <Plug>(coc-format-selected)
+nmap <S-p> :Prettier<CR>
+
+" LIT highlighting and autoclosing
+let g:htl_css_templates = 1
+let g:htl_all_templates = 1
+let g:closetag_filetypes = 'html,xhtml,phtml,javascript,typescript'
+let g:closetag_regions = {
+      \ 'typescript.tsx': 'jsxRegion,tsxRegion,litHtmlRegion',
+      \ 'javascript.jsx': 'jsxRegion,litHtmlRegion',
+      \ 'javascript':     'litHtmlRegion',
+      \ 'typescript':     'litHtmlRegion',
+      \ }
