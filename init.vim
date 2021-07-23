@@ -163,3 +163,6 @@ let g:closetag_regions = {
       \ 'javascript':     'litHtmlRegion',
       \ 'typescript':     'litHtmlRegion',
       \ }
+
+" Polyglot
+let g:vim_svelte_plugin_use_typescript = 1
