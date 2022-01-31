@@ -58,6 +58,7 @@ Plug 'vitalk/vim-simple-todo', { 'for': 'todo' }
 Plug 'sheerun/vim-polyglot'
 Plug 'codechips/coc-svelte', {'do': 'npm install'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jparise/vim-graphql'
 call plug#end()
 
 " Coc
@@ -85,6 +86,9 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Todos
+au BufRead,BufNewFile *.todo set filetype=todo
 
 " Mappings
 " -------------------------------
