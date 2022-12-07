@@ -135,6 +135,7 @@ let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 " Ack
 nmap <leader>fa :Ack<space>
+nmap <leader>fw :Ack <cword><cr>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Emmet
