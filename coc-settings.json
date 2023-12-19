@@ -11,5 +11,6 @@
     ],
     "prettier.eslintIntegration": true,
     "eslint.autoFixOnSave": true,
-    "tsserver.npm": "/usr/local/bin/npm"
+    "tsserver.npm": "/usr/local/bin/npm",
+    "svelte.enable-ts-plugin": true
 }
