@@ -25,3 +25,6 @@ vim.opt.clipboard = 'unnamedplus'
 
 -- Zen mode
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>",  {noremap = true, silent = true})
+
+-- tree
+vim.keymap.set("n", "<leader>nt", "NvimTreeToggle<CR>")
