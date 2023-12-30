@@ -4,6 +4,14 @@ vim.keymap.set("n", ";", ":")
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<leader>w", "C-w")
 
+-- Special stuff
+-- Shifting stuff in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Pasting from the void
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
 -- Windowpanes
 vim.o.splitbelow		= true
 vim.o.splitright		= true
