@@ -19,6 +19,7 @@ local plugins = {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
+    { "alexghergh/nvim-tmux-navigation" },
     { "RRethy/nvim-base16", version=false },
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
