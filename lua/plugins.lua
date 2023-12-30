@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugins table
 local plugins = {
     'mbbill/undotree',
+    "folke/zen-mode.nvim",
+    "folke/twilight.nvim",
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
