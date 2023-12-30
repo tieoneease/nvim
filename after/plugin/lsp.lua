@@ -13,8 +13,6 @@ cmp.setup({
     {name = 'luasnip', keyword_length = 2},
     {name = 'buffer', keyword_length = 3},
   },
-  formatting = lsp.cmp_format(),
-
   mapping = cmp.mapping.preset.insert({
     ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
