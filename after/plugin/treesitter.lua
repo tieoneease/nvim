@@ -13,6 +13,8 @@ require'nvim-treesitter.configs'.setup {
 	  "query",
 	  "regex",
 	  "tsx",
+      "svelte",
+      "css",
 	  "typescript",
       "rust",
 	  "vim",
