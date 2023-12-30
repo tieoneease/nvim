@@ -2,6 +2,7 @@ require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = {
 	  "bash",
+      "go",
 	  "html",
 	  "javascript",
 	  "json",
@@ -13,6 +14,7 @@ require'nvim-treesitter.configs'.setup {
 	  "regex",
 	  "tsx",
 	  "typescript",
+      "rust",
 	  "vim",
 	  "yaml",
   },
