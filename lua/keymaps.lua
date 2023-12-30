@@ -17,8 +17,8 @@ vim.keymap.set("n", "<C-l>", "<C-w>l",  {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>tn", ":tab split<CR>",  {noremap = true, silent = true})
 vim.keymap.set("n", "<C-S-tab>", ":tabp<CR>",  {noremap = true, silent = true})
 vim.keymap.set("n", "<C-tab>", ":tabn<CR>",  {noremap = true, silent = true})
-vim.keymap.set("n", "<S-h>", ":tabmove -1<CR>",  {noremap = true, silent = true})
-vim.keymap.set("n", "<S-l>", ":tabmove +1<CR>",  {noremap = true, silent = true})
+vim.keymap.set("n", "<C-S-PageUp>", ":tabmove -1<CR>",  {noremap = true, silent = true})
+vim.keymap.set("n", "<C-S-PageDown>", ":tabmove +1<CR>",  {noremap = true, silent = true})
 
 -- Clipboard
 vim.opt.clipboard = 'unnamedplus'
