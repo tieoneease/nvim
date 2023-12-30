@@ -27,8 +27,8 @@ vim.opt.clipboard = 'unnamedplus'
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>",  {noremap = true, silent = true})
 
 -- tree
-vim.keymap.set("n", "<leader>nt", "NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>nt", ":NvimTreeToggle<CR>")
 
 -- fterm
-vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('n', '<C-i>', ':lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
