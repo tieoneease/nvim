@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	{"RRethy/nvim-base16", lazy=false},
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' }
