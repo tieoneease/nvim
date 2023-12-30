@@ -6,3 +6,5 @@ require('base16-colorscheme').with_config({
     cmp = true,
     illuminate = true,
 })
+
+vim.cmd('colorscheme base16-ocean')

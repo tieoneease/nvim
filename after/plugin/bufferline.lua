@@ -1,4 +1,5 @@
 local bufferline = require('bufferline')
+local colors = require('base16-colorscheme').colors
 bufferline.setup {
     options = {
         mode = "tabs",
@@ -10,7 +11,62 @@ bufferline.setup {
     },
 
     highlights = {
-        background = {
-        }
+            fill = {
+                fg = colors.base04,
+                bg = colors.base01, 
+            },
+            background = {
+                fg = colors.base04,
+                bg = colors.base00, 
+            },
+            tab = {
+                fg = colors.base04,
+                bg = colors.base0A, 
+            },
+            tab_selected = {
+                fg = colors.base04,
+                bg = colors.base01, 
+            },
+            tab_separator = {
+                fg = colors.base01, 
+                bg = colors.base01, 
+            },
+            buffer_selected = {
+                fg = colors.base04,
+                bg = colors.base00, 
+                bold = true,
+                italic = true,
+            },
+            buffer_visible = {
+                fg = colors.base0F,
+                bg = colors.base01, 
+            },
+            duplicate_selected = {
+                fg = colors.base04,
+                bg = colors.base00, 
+                italic = true,
+            },
+            duplicate_visible = {
+                fg = colors.base04,
+                bg = colors.base00, 
+                italic = true,
+            },
+            duplicate = {
+                fg = colors.base04,
+                bg = colors.base00, 
+                italic = true,
+            },
+            separator_selected = {
+                fg = colors.base01,
+                bg = colors.base01, 
+            },
+            separator_visible = {
+                fg = colors.base01,
+                bg = colors.base01, 
+            },
+            separator = {
+                fg = colors.base01,
+                bg = colors.base01, 
+            },
     }
 }
