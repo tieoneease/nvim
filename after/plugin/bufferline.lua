@@ -68,5 +68,25 @@ bufferline.setup {
                 fg = colors.base01,
                 bg = colors.base01, 
             },
+            --modified = {
+            --    fg = '<colour-value-here>',
+            --    bg = '<colour-value-here>',
+            --},
+            --modified_visible = {
+            --    fg = '<colour-value-here>',
+            --    bg = '<colour-value-here>',
+            --},
+            --modified_selected = {
+            --    fg = '<colour-value-here>',
+            --    bg = '<colour-value-here>',
+            --},
+            indicator_visible = {
+                fg = colors.base01,
+                bg = colors.base01, 
+            },
+            indicator_selected = {
+                fg = colors.base01,
+                bg = colors.base01, 
+            },
     }
 }
