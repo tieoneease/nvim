@@ -1,4 +1,4 @@
-require('chungsam.remap')
-require('chungsam.options')
-require('chungsam.plugins')
-require('chungsam.theming')
+require('keymaps')
+require('options')
+require('plugins')
+require('theming')
