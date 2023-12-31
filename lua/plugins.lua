@@ -65,6 +65,11 @@ local plugins = {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
+    {
+        'numToStr/Comment.nvim',
+        opts = {},
+        lazy = false,
+    },
     { "alexghergh/nvim-tmux-navigation" },
     { "RRethy/nvim-base16", version=false },
     {'williamboman/mason.nvim'},

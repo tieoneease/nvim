@@ -5,6 +5,7 @@ vim.keymap.set('n', '<leader>fa', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fw', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fk', builtin.commands, {})
 
 
 local colors = require('base16-colorscheme').colors
