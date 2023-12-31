@@ -21,6 +21,18 @@ local plugins = {
     "lewis6991/gitsigns.nvim",
     "numToStr/FTerm.nvim",
     'tpope/vim-surround',
+    {
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    },
     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {
         "epwalsh/obsidian.nvim",
