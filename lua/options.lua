@@ -27,3 +27,5 @@ vim.opt.incsearch = true
 -- colors
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
+
+vim.opt.cursorline = true
