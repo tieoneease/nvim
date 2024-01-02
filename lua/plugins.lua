@@ -33,7 +33,18 @@ local plugins = {
         event = "InsertEnter",
         opts = {} -- this is equalent to setup({}) function
     },
-    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        opts = {
+            -- configurations go here
+        },
+    },
     {
         "epwalsh/obsidian.nvim",
         version = "*",  -- recommended, use latest release instead of latest commit
@@ -71,7 +82,7 @@ local plugins = {
         lazy = false,
     },
     { "alexghergh/nvim-tmux-navigation" },
-    { "RRethy/nvim-base16", version=false },
+    {"catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {'williamboman/mason.nvim'},
     {'williamboman/mason-lspconfig.nvim'},
     {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
